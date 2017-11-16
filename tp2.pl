@@ -20,7 +20,7 @@
     } else {
 	    print $q->header(-charset => 'utf8');
 	    print $q->start_html('Hola shurmano'),
-	    my $nombre = $q->param('nombre');                               #Guardamos el parametro en la variable nombre
+	    my $nombre = $q->param('nombre');                               # Guardamos el parametro en la variable nombre
 	    print $q->h1('Hola ' . $nombre . ' ¿como estás shurmano?'),     # Encabezado de nivel uno de tamaño
 	    print $q->end_html;                                             # Para finalizar el documento HTML
     }
