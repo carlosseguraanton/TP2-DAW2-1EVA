@@ -3,7 +3,7 @@
     use CGI;                                                                # Importación de la librería CGI
     $q = CGI->new;                                                          # Instanciación del objeto q con CGI (libreria)
 
-    if(!$query->param) {
+    if(!$q->param) {
 	    print $q->header,                                               # Creación del encabezado HTTP
 	    print $q->header(-charset => 'utf8');                           # Determinación de la codificacion
 	    print $q->start_html('Hola shurmano'),                          # Para comenzar el documento HTML
