@@ -6,21 +6,19 @@
     if(!$q->param) {
 	    print $q->header,                                               # Creación del encabezado HTTP
 	    print $q->header(-charset => 'utf8');                           # Determinación de la codificacion
-	    print $q->start_html('Hola shurmano'),                          # Para comenzar el documento HTML
+	    print $q->start_html('Hola shurmano'),                          # Comenzamos el documento HTML
 	    print $q->h1('Dame tu nombre y te saludo como dios manda'),     # Encabezado de nivel uno de tamaño
 	    print $q->start_form(-onsubmit=>'/submit');                     # Iniciamos el formulario
-	    #Añadimos el campo al formulario
-	    print $q->label('Nombre: ');
+	    print $q->label('Nombre: ');                                    # Añadimos el campo nombre al formulario
 	    print $q->textfield(-name=>'nombre',-size=>5,-maxlength=>50);
-	    #Añadimos los botones de accion
-	    print $q->submit('submit','Enviar');
+	    print $q->submit('submit','Enviar');                            # Añadimos los botones de acción
 	    print $q->reset('reset','limpiar datos');
 	    print $q->end_form;                                             # Finalizamos el formulario
 	    print $q->end_html;                                             # Para finalizar el documento HTML
     } else {
 	    print $q->header(-charset => 'utf8');
 	    print $q->start_html('Hola shurmano'),
-	    my $nombre = $q->param('nombre');                               # Guardamos el parametro en la variable nombre
-	    print $q->h1('Hola ' . $nombre . ' ¿como estás shurmano?'),     # Encabezado de nivel uno de tamaño
-	    print $q->end_html;                                             # Para finalizar el documento HTML
+	    my $nombre = $q->param('nombre');                               # Guardamos el parámetro en la variable nombre
+	    print $q->h1('Hola ' . $nombre . ' ¿como estás shurmano?'),     # Encabezado h1 de tamaño con el saludo y el nombre
+	    print $q->end_html;                                             # Finalizar el documento HTML
     }
