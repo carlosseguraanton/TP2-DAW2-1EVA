@@ -4,8 +4,7 @@
     $q = CGI->new;                                                          # Instanciación del objeto q con CGI (libreria)
 
     if(!$q->param) {
-	    print $q->header,                                               # Creación del encabezado HTTP
-	    print $q->header(-charset => 'utf8');                           # Determinación de la codificacion
+	    print $q->header(-charset => 'utf8');                           # Creación del encabezado HTTP y determinación de la codificacion
 	    print $q->start_html('Hola shurmano'),                          # Comenzamos el documento HTML
 	    print $q->h1('Dame tu nombre y te saludo como dios manda'),     # Encabezado de nivel uno de tamaño
 	    print $q->start_form(-onsubmit=>'/submit');                     # Iniciamos el formulario
